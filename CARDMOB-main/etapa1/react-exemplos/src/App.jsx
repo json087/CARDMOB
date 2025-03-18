@@ -4,10 +4,12 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import Counter from "./components/Counter";
 import Photo from "./components/photo";
+import Album from "./components/album";
 
 function App() {
   const [count, setCount] = useState(0);
   const [photos, setPhotos] = useState([]);
+  const[albumId, setAlbumId] = useState(1)
 
   const fetchPhotos = async () => {
     try {
@@ -34,7 +36,7 @@ function App() {
     <>
       {/* <Counter title="Contando..."/> */}
       {/* <Counter initial="100"/> */}
-      <article>
+      {/* <article>
         <h1>Meu álbum</h1>
         {photos.map((photo) => {
           return ( 
@@ -45,9 +47,16 @@ function App() {
             <Photo photo={photo}/>
           );
         })}
-      </article>
+      </article> */}
+      <div>
+        <button onClick={() => setAlbumId(1)}>Album #1</button>
+        <button onClick={() => setAlbumId(2)}>Album #2</button>
+        <button onClick={() => setAlbumId(3)}>Album #3</button>
+        <button onClick={() => setAlbumId(4)}>Album #4</button>
+       
+      </div>  
+      <Album albumId={albumId}/>
     </>
   );
 }
-
 export default App;
