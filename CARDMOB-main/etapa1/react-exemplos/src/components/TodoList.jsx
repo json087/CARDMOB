@@ -37,6 +37,11 @@ const TodoList = ({ name }) => {
     const deleteTodo = (id) => {
         setTodo(tasks.filter((task) => task.id !== id));
     };
+    // Cancel edinting
+    const cancelEdinting = () => {
+        setEditingId(null)
+        setEditingText("")
+    } 
 
     return (
         <div style={{ textAlign: "center", marginTop: "50px" }}>
@@ -59,6 +64,7 @@ const TodoList = ({ name }) => {
                                     onChange={(event) => setEditingText(event.target.value)}
                                 />
                                 <button onClick={saveEdit}>Salvar</button>
+                                <a href="#" onClick={cancelEdinting}>Cancelar</a>
                             </>
                         ) : (
                             <>
