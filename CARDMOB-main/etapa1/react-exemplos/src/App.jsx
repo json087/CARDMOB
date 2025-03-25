@@ -4,6 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import Counter from "./components/Counter";
 import Photo from "./components/photo";
+import TodoList from "./components/TodoList";
 import Album from "./components/album";
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
 
   return (
     <>
+    <TodoList name='CARDMOB'/>
       {/* <Counter title="Contando..."/> */}
       {/* <Counter initial="100"/> */}
       {/* <article>
