@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Text, View, TextInput, TouchableOpacity,
-StyleSheet} from 'react-native'
+import { Text, View, TextInput, TouchableOpacity, StyleSheet} from 'react-native';
 
 class Inputs extends Component {
     state = {
@@ -11,36 +10,35 @@ class Inputs extends Component {
         this.setState({email: text});
     }
     handlePassword = (text) => {
-        this.setState({password: text}); 
+        this.setState({password: text});
     }
-    Login = (email, pass) => {
-        alert(`email: ${email} \npassword: ${pass}`)
+    login = (email, pass) => {
+        alert(`email: ${email} \npassword: ${pass}`);
     }
-    
 
-    render() { 
+    render() {
         return (
-            <View style={StyleSheet.container}> 
-                <TextInput
+            <View style={styles.container}>
+                <TextInput 
                     style={styles.input}
                     underlineColorAndroid="transparent"
                     placeholder="Email"
                     autoCapitalize="none"
                     onChangeText={this.handleEmail}
                 />
-                <TextInput
+                <TextInput 
                     style={styles.input}
                     underlineColorAndroid="transparent"
-                    placeholder="password"
+                    placeholder="Password"
                     placeholderTextColor="#9a73ef"
                     autoCapitalize="none"
                     secureTextEntry
                     onChangeText={this.handlePassword}
-                /> 
-                <TouchableOpacity
+                />
+                <TouchableOpacity 
                     style={styles.submitButton}
                     onPress={
-                        () => this.Login(
+                        () => this.login(
                             this.state.email,
                             this.state.password
                         )
@@ -65,7 +63,7 @@ const styles = StyleSheet.create({
         margin: 15,
         height: 40,
         borderColor: '#7a42f4',
-        borderWidth: 1
+        borderWidth: 1,
     },
     submitButton: {
         backgroundColor: '#7a42f4',
