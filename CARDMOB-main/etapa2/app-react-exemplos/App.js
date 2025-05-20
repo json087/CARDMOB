@@ -6,10 +6,7 @@ import Inputs from './compenents/inputs';
 export default function App() {
   return (
     <View style={styles.container}>
-      <List />
-      <View style={styles.redbox}></View>
-      <View style={styles.bluebox}></View>
-      <View style={styles.blackbox}></View>
+       <Inputs/>
     </View>
   );
 }
